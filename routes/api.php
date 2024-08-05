@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AiController;
 use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,8 @@ use App\Http\Controllers\Api\UserController;
 */
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::post('/user', [UserController::class, 'store'])->name('user.store');
+
+Route::post('/ocr', [AiController::class, 'ocr'])->name('ocr.image');
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
