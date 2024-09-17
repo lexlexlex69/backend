@@ -15,7 +15,7 @@ class AiController extends Controller
         Storage::delete($images);
 
         $imagePath = $request->file('image')->storePublicly('ocr', 'public');
-        $fullPath = storage_path('app/public/') . $imagePath;
+        $fullPath = storage_path('app/public/') . 'images/TVNmCqobKjIzZVyPDHAHFkKS31HyQXUj156f07Jr.png';
         $parsedText = (new TesseractOCR($fullPath))
         ->run();
         $response = [
