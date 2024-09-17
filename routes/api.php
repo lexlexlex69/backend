@@ -21,7 +21,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::post('/user', [UserController::class, 'store'])->name('user.store');
 
 Route::post('/ocr', [AiController::class, 'ocr'])->name('ocr.image');
-
+Route::get('/userss', [UserController::class, 'index']);
+Route::put('/userss/{id}', [UserController::class, 'image'])->name('user.image');
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
